@@ -1,1 +1,3 @@
-# BME_547
+# Patient Health Database
+
+Author: Chase Morell
