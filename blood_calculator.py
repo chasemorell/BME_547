@@ -21,4 +21,8 @@ def check_HDL(x):
     elif(x<40):
         return "Low"
 
+def HDL_driver():
+    while(True):
+        print(check_HDL(input_HDL()))
+
 interface()
