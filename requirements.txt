@@ -1,2 +1,2 @@
 pytest
-pycodestyle
+pytest-pycodestyle
