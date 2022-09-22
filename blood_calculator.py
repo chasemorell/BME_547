@@ -1,5 +1,5 @@
 def interface():
-    print("Blood Calculator");
+    print("Blood Calculator")
     print("Options")
     print("1 - HDL")
     print("2 - LDL")
@@ -12,58 +12,67 @@ def interface():
         if choice == "9":
             return
         if choice == "1":
-            HDL_driver();
+            HDL_driver()
         if choice == "2":
-            LDL_driver();
+            LDL_driver()
         if choice == "3":
-            cholesterol_driver();
+            cholesterol_driver()
+
 
 def input_HDL():
     HDL_input = input("Enter the HDL value:")
     return int(HDL_input)
 
+
 def check_HDL(x):
-    if(x>=60):
+    if x >= 60:
         return "Normal"
-    elif(x>=40 and x<60):
+    elif x >= 40 and x < 60:
         return "Borderline Low"
-    elif(x<40):
+    elif x < 40:
         return "Low"
 
 
 def HDL_driver():
-        print(check_HDL(input_HDL()))
+    print(check_HDL(input_HDL()))
+
 
 def LDL_driver():
-        print(check_LDL(input_LDL()))
+    print(check_LDL(input_LDL()))
+
 
 def input_LDL():
     LDL_input = input("Enter the LDL value:")
     return int(LDL_input)
 
+
 def check_LDL(x):
-    if(x<130):
+    if x < 130:
         return "Normal"
-    elif(x<=159):
+    elif x <= 159:
         return "Borderline High"
-    elif(x<=189):
+    elif x <= 189:
         return "High"
-    elif(x>=190):
+    elif x >= 190:
         return "Very High"
 
+
 def cholesterol_driver():
-        print(check_cholesterol(input_cholesterol()))
+    print(check_cholesterol(input_cholesterol()))
+
 
 def input_cholesterol():
     cholesterol_input = input("Enter the cholesterol value:")
     return int(cholesterol_input)
 
+
 def check_cholesterol(x):
-    if(x<200):
+    if x < 200:
         return "Normal"
-    elif(x<=239):
+    elif x <= 239:
         return "Borderline High"
-    elif(x>=240):
+    elif x >= 240:
         return "High"
+
 
 interface()
