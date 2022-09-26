@@ -5,7 +5,8 @@
              type of medical treatment or diagnostics.
 """
 
-def chooseDiagnosis():
+
+def choose_diagnosis():
     print("Choose diagnosis:")
     print("1 - Acute otitis media")
     print("2 - Acute bacterial sinusitis")
@@ -13,7 +14,8 @@ def chooseDiagnosis():
     print("4 - Pharyngitis/tonsilitis")
     return int(input("Enter a number: "))
 
-def getWeight():
+
+def get_weight():
     print("PATIENT WEIGHT")
     print("Enter patient weight followed by units of kg or lb.")
     print("Examples:  65.3 lb      21.0 kg")
@@ -25,28 +27,30 @@ def getWeight():
         weight = weight / 2.205
     return weight, units
 
-def calculateDosage(diagnosis,weight):
+
+def calculate_dosage(diagnosis, weight):
     dosages_mg_per_kg = [30, 10, 10, 12]
     dosage_mg_per_kg = dosages_mg_per_kg[diagnosis - 1]
     dosage_mg_first_day = weight * dosage_mg_per_kg
     return dosage_mg_per_kg, dosage_mg_first_day,
 
-def printDosageFirstDay(weight,dosage_mg_first_day):
+
+def print_dosage_first_day(weight, dosage_mg_first_day):
     print("CORRECT DOSAGE")
     print("For a patient weighing {:.1f} kg,".format(weight))
     print("  the correct dosage is {:.1f} mg ".format(dosage_mg_first_day))
+
 
 def dose_amount():
     print("Day One Dosing Guidelines")
     print("")
 
-    diagnosis = chooseDiagnosis()
-    weight, units = getWeight()
+    diagnosis = choose_diagnosis()
+    weight, units = get_weight()
 
-    dosage_mg_per_kg, dosage_mg_first_day = calculateDosage(diagnosis,weight)
+    dosage_mg_per_kg, dosage_mg_first_day = calculate_dosage(diagnosis, weight)
 
-    printDosageFirstDay(weight,dosage_mg_first_day)
-
+    print_dosage_first_day(weight, dosage_mg_first_day)
 
 
 if __name__ == "__main__":
