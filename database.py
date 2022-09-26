@@ -22,30 +22,29 @@ def get_full_name(entry):
 
 
 def print_db(db):
-    for x in db:
+    for x in db.values():
         print("Name: {}, id: {}, age: {}, tests: {}".format(get_full_name(x),
                                                             x["Patient ID"],
                                                             x["Age"],
                                                             x["Tests"]))
 
 
-def get_patient(db, id):
-    return list(filter(lambda e: e[1] == id, db))
+def get_patient(db, id_no):
+    return db[id_no]
+    # return list(filter(lambda e: e[1] == id, db))
 
 
 def add_test_result_to_patient(db, id, test_name, test_value):
-    for index, i in enumerate(db):
-        if i["Patient ID"] == id:
-            db[index]["Tests"].append((test_name, test_value))
+    db[id]["Tests"].append((test_name, test_value))
 
 
 def main():
-    db = []
-    db.append(create_patient_entry("John", "Smith", 1, 30))
-    db.append(create_patient_entry("Maggie", "Sills", 2, 23))
-    db.append(create_patient_entry("Chase", "Morell", 3, 30))
-    db.append(create_patient_entry("Mark", "Smith", 4, 50))
-    db.append(create_patient_entry("Scott", "Morell", 5, 23))
+    db = {}
+    db[1] = create_patient_entry("John", "Smith", 1, 30)
+    db[2] = create_patient_entry("Maggie", "Sills", 2, 23)
+    db[3] = create_patient_entry("Chase", "Morell", 3, 30)
+    db[4] = create_patient_entry("Mark", "Smith", 4, 50)
+    db[5] = create_patient_entry("Scott", "Morell", 5, 23)
 
     print_db(db)
     # print(getPatient(db,9))
